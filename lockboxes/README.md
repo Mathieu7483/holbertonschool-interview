@@ -18,8 +18,6 @@ Vous avez $n$ boîtes verrouillées devant vous. Chaque boîte est numérotée s
 def canUnlockAll(boxes)
 ```
 
-## Auteur
+## ✍️ Auteur
 
-**Mathieu**
-
-[Mathieu GODALIER](https://github.com/Mathieu7483) - Student machine learning at Holberton School
+  * **Mathieu** - *Étudiant en programmation, spécialisation Machine Learning* - [👤 Mathieu GODALIER](https://github.com/Mathieu7483)
