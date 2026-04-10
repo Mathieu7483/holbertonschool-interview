@@ -56,9 +56,6 @@ cd 0-lockboxes/
 
 ```
 
+## ✍️ Author
 
-## ✒️ Author
-
-**Mathieu**
-
-[Mathieu GODALIER](https://github.com/Mathieu7483) - Student machine learning at Holberton School
+  * **Mathieu** - *Programming student, specialization Machine Learning* - [👤 My Github profile](https://github.com/Mathieu7483)
