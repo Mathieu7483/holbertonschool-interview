@@ -1,4 +1,7 @@
 # Insert in Sorted Linked List
+<p align="center"\>
+<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/insert_in_sorted_linked_list/a-precise-technical-illustration-on-a-clean-white-.png"\>
+</p>
 
 ## 📝 Description
 
