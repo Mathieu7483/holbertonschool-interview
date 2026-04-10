@@ -56,6 +56,6 @@ $ ./insert
 
 ## ✍️ Auteur
 
-  * **Mathieu** - *Étudiant en programmation* - [Mathieu GODALIER](https://github.com/Mathieu7483)
+  * **Mathieu** - *Étudiant en programmation, spécialisation Machine Learning* - [👤 Mathieu GODALIER](https://github.com/Mathieu7483)
 
 -----
