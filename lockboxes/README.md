@@ -16,3 +16,10 @@ Vous avez $n$ boîtes verrouillées devant vous. Chaque boîte est numérotée s
 ## Prototype
 ```python
 def canUnlockAll(boxes)
+```
+
+## Auteur
+
+**Mathieu**
+
+[Mathieu GODALIER](https://github.com/Mathieu7483) - Student machine learning at Holberton School
