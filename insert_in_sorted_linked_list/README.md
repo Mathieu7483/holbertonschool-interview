@@ -1,9 +1,3 @@
-C'est une excellente préparation pour les entretiens techniques, Mathieu. Insérer dans une liste déjà triée est un grand classique qui demande une bonne maîtrise des pointeurs pour ne pas perdre le "fil" de la liste.
-
-Voici un **README.md** structuré et professionnel pour ton dépôt.
-
------
-
 # Insert in Sorted Linked List
 
 ## 📝 Description
