@@ -1,64 +1,83 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_size - function that calculate the size of the tree
- * @tree: is a pointer to the root node of the tree to measure the size
- * Return: size of the tree
+ * binary_tree_size - Measures the size of a binary tree
+ * @tree: Pointer to the node to measure the size
+ *
+ * Return: Size of the tree, 0 if tree is NULL
  */
 size_t binary_tree_size(const binary_tree_t *tree)
 {
-  if (tree == NULL)
-    return (0);
-  return (1 + binary_tree_size(tree->left) + binary_tree_size(tree->right));
+	if (!tree)
+		return (0);
+
+	return (1 + binary_tree_size(tree->left) + binary_tree_size(tree->right));
 }
 
 /**
- * heap_insert - function that inserts a value in Max Binary Heap
- * @root: is a double pointer to the root node of the Heap
- * @value: is the value to store in the node to be inserted
- * Return: pointer to the created node, or NULL on failure
+ * get_parent - Finds the parent node for the next insertion
+ * @root: Pointer to the root of the heap
+ * @size: Current size of the heap + 1
+ *
+ * Return: Pointer to the parent node
+ */
+heap_t *get_parent(heap_t *root, int size)
+{
+	int mask;
+	heap_t *parent = root;
+
+	mask = 1 << (31 - __builtin_clz(size) - 1);
+	while (mask > 1)
+	{
+		if (size & mask)
+			parent = parent->right;
+		else
+			parent = parent->left;
+		mask >>= 1;
+	}
+	return (parent);
+}
+
+/**
+ * heap_insert - Inserts a value in Max Binary Heap
+ * @root: Double pointer to the root node of the Heap
+ * @value: Value to store in the node to be inserted
+ *
+ * Return: Pointer to the created node, or NULL on failure
  */
 heap_t *heap_insert(heap_t **root, int value)
 {
-  heap_t *new_node, *parent;
-  int size, mask, temp;
+	heap_t *new, *parent;
+	int size, temp;
 
-  if (root == NULL)
-    return (NULL);
+	if (!root)
+		return (NULL);
 
-  if (*root == NULL)
-    return (*root = binary_tree_node(NULL, value));
+	if (!(*root))
+	{
+		*root = binary_tree_node(NULL, value);
+		return (*root);
+	}
 
-  size = binary_tree_size(*root) + 1;
-  parent = *root;
+	size = (int)binary_tree_size(*root) + 1;
+	parent = get_parent(*root, size);
 
-  mask = 1 << (31 - __builtin_clz(size) - 1);
+	new = binary_tree_node(parent, value);
+	if (!new)
+		return (NULL);
 
-  while (mask > 1)
-  {
-    if (size & mask)
-      parent = parent->right;
-    else
-      parent = parent->left;
-    mask >>= 1;
-  }
+	if (size & 1)
+		parent->right = new;
+	else
+		parent->left = new;
 
-  new_node = binary_tree_node(parent, value);
-  if (!new_node)
-    return (NULL);
+	while (new->parent && new->n > new->parent->n)
+	{
+		temp = new->n;
+		new->n = new->parent->n;
+		new->parent->n = temp;
+		new = new->parent;
+	}
 
-  if (size & 1)
-    parent->right = new_node;
-  else
-    parent->left = new_node;
-
-  while (new_node->parent && new_node->n > new_node->parent->n)
-  {
-    temp = new_node->n;
-    new_node->n = new_node->parent->n;
-    new_node->parent->n = temp;
-    new_node = new_node->parent;
-  }
-
-  return (new_node);
+	return (new);
 }
