@@ -1,3 +1,8 @@
+<p align="center"\>
+<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/minimum_operations/an-elegant-mathematical-diagram-representing-prime.png"\>
+</p>
+
+
 # Minimum Operations
 
 ## 📝 Description
