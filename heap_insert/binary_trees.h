@@ -26,5 +26,6 @@ typedef struct binary_tree_s binary_tree_t;
 /* Function prototypes */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
 void binary_tree_print(const binary_tree_t *tree);
+heap_t *heap_insert(heap_t **root, int value);
 
 #endif /*BINARY_TREES_H*/
