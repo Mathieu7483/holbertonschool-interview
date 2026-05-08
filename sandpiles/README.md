@@ -1,0 +1,66 @@
+Interview Prep: Sandpiles
+Description of Problem
+Write a function that computes the sum of two 3x3 sandpiles.
+
+Prototype: void sandpiles_sum(int grid1[3][3], int grid2[3][3]);
+You can assume that both grid1 and grid2 are individually stable
+(A sandpile is stable when no cells contain more than 3 grains)
+grid1 must be printed before each toppling round, only if it is unstable (See example)
+You’re not allowed to allocate memory dynamically
+What is a sandpile?
+Check out this video to learn!
+
+Proposed Solution 💡
+11 january 2021
+My solution is straightforward.
+
+I add the two grids together using a nested loop.
+While I add them, I record if grid1[i][j] became unstable onto grid2[i][j]. Therefore, after the sum is complete grid2 acts as a map of the location of unstable cells
+I use grid2 to locate and stabilize the unstable cells
+I stabilize an unstable cell by removing 4 grains from the cell and inserting one grain each onto the left, right, upper, and lower neighboring cells (if they exist)
+I recheck for unstable cells and repeat steps 2 and 3 until grid1 is stable.
+In reality, the mapping of unstable cells onto grid2 is unnecessary to complete the sum accurately. But the interview exercise asked that we print the intermediate sandpile of each round of stabilization, which meant we needed to maintain a stage-by-stage order of cells to be stabilized.
+
+void sandpiles_sum(int grid1[3][3], int grid2[3][3])
+{
+	int i, j, unstable = 0;
+
+	/* ADD SANDPILES */
+	for (i = 0; i < 3; i++)
+		for (j = 0; j < 3; j++)
+		{
+			grid1[i][j] += grid2[i][j];                         /* add cells */
+			grid2[i][j] = (grid1[i][j] > 3);    /* map cell state onto grid2 */
+			unstable += (grid1[i][j] > 3);         /* count cell if unstable */
+		}
+
+	/* STABILIZE SANDPILE */
+	while (unstable)
+	{
+		print_grid(grid1);
+
+		/* stabilize sandpile (using grid2 as map to find unstable cells) */
+		for (i = 0; i < 3; i++)
+			for (j = 0; j < 3; j++)
+				if (grid2[i][j])
+				{
+					grid1[i][j] -= 4;           /* remove 4 grains from cell */
+					if (i + 1 < 3)                /* add grain to right cell */
+						grid1[i + 1][j] += 1;
+					if (i - 1 >= 0)                /* add grain to left cell */
+						grid1[i - 1][j] += 1;
+					if (j + 1 < 3)                  /* add grain to top cell */
+						grid1[i][j + 1] += 1;
+					if (j - 1 >= 0)              /* add grain to bottom cell */
+						grid1[i][j - 1] += 1;
+				}
+
+		/* re-count and re-map unstable cells */
+		for (unstable = 0, i = 0; i < 3; i++)
+			for (j = 0; j < 3; j++)
+			{
+				grid2[i][j] = (grid1[i][j] > 3);     /* map state onto grid2 */
+				unstable += (grid1[i][j] > 3);       /* count unstable cells */
+			}
+	}
+}
