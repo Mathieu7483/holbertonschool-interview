@@ -62,8 +62,6 @@ gcc -Wall -Wextra -Werror -pedantic 0-main.c 0-sandpiles.c -o 0-sandpiles
 
 ## ✍️ Auteur
 
-* **Mathieu** - *Étudiant en programmation (41 ans)* - [GitHub Profile]()
-
-			}
+  * **Mathieu** - *Étudiant en programmation, spécialisation Machine Learning* - [👤 Mathieu GODALIER](https://github.com/Mathieu7483)
 	}
 }
