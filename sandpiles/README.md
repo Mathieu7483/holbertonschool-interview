@@ -1,66 +1,69 @@
-Interview Prep: Sandpiles
-Description of Problem
-Write a function that computes the sum of two 3x3 sandpiles.
+<p align="center"\>
+<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/sandpiles/an-abstract-fractal-pattern-inspired-by-the-abelia.png"\>
+</p>
 
-Prototype: void sandpiles_sum(int grid1[3][3], int grid2[3][3]);
-You can assume that both grid1 and grid2 are individually stable
-(A sandpile is stable when no cells contain more than 3 grains)
-grid1 must be printed before each toppling round, only if it is unstable (See example)
-You’re not allowed to allocate memory dynamically
-What is a sandpile?
-Check out this video to learn!
+# Sandpiles Sum
 
-Proposed Solution 💡
-11 january 2021
-My solution is straightforward.
+## 🥪 Description
 
-I add the two grids together using a nested loop.
-While I add them, I record if grid1[i][j] became unstable onto grid2[i][j]. Therefore, after the sum is complete grid2 acts as a map of the location of unstable cells
-I use grid2 to locate and stabilize the unstable cells
-I stabilize an unstable cell by removing 4 grains from the cell and inserting one grain each onto the left, right, upper, and lower neighboring cells (if they exist)
-I recheck for unstable cells and repeat steps 2 and 3 until grid1 is stable.
-In reality, the mapping of unstable cells onto grid2 is unnecessary to complete the sum accurately. But the interview exercise asked that we print the intermediate sandpile of each round of stabilization, which meant we needed to maintain a stage-by-stage order of cells to be stabilized.
+Ce projet implémente l'algorithme de sommation de deux "tas de sable" (Sandpiles) de taille $3 \times 3$. Un tas de sable est représenté par une grille d'entiers où chaque cellule contient un nombre de grains de sable.
 
-void sandpiles_sum(int grid1[3][3], int grid2[3][3])
-{
-	int i, j, unstable = 0;
+La règle d'or est la **stabilité** :
 
-	/* ADD SANDPILES */
-	for (i = 0; i < 3; i++)
-		for (j = 0; j < 3; j++)
-		{
-			grid1[i][j] += grid2[i][j];                         /* add cells */
-			grid2[i][j] = (grid1[i][j] > 3);    /* map cell state onto grid2 */
-			unstable += (grid1[i][j] > 3);         /* count cell if unstable */
-		}
+* Un tas de sable est **stable** si aucune cellule ne contient plus de **3 grains**.
+* Si une cellule contient **4 grains ou plus**, elle s'effondre (**toppling**) : elle garde le reste de la division par 4 et distribue 1 grain à chacun de ses voisins directs (haut, bas, gauche, droite).
 
-	/* STABILIZE SANDPILE */
-	while (unstable)
-	{
-		print_grid(grid1);
+## 🎓 Objectifs d'apprentissage
 
-		/* stabilize sandpile (using grid2 as map to find unstable cells) */
-		for (i = 0; i < 3; i++)
-			for (j = 0; j < 3; j++)
-				if (grid2[i][j])
-				{
-					grid1[i][j] -= 4;           /* remove 4 grains from cell */
-					if (i + 1 < 3)                /* add grain to right cell */
-						grid1[i + 1][j] += 1;
-					if (i - 1 >= 0)                /* add grain to left cell */
-						grid1[i - 1][j] += 1;
-					if (j + 1 < 3)                  /* add grain to top cell */
-						grid1[i][j + 1] += 1;
-					if (j - 1 >= 0)              /* add grain to bottom cell */
-						grid1[i][j - 1] += 1;
-				}
+* Manipulation de tableaux bidimensionnels (2D) en C.
+* Algorithmes itératifs de stabilisation.
+* Contraintes de mémoire : interdiction d'utiliser `malloc` (allocation statique uniquement).
+* Respect des normes de codage **Betty**.
 
-		/* re-count and re-map unstable cells */
-		for (unstable = 0, i = 0; i < 3; i++)
-			for (j = 0; j < 3; j++)
-			{
-				grid2[i][j] = (grid1[i][j] > 3);     /* map state onto grid2 */
-				unstable += (grid1[i][j] > 3);       /* count unstable cells */
+## 🛠️ Spécifications techniques
+
+* **Système** : Ubuntu 14.04 LTS.
+* **Compilateur** : `gcc 4.8.4` avec les flags `-Wall -Werror -Wextra -pedantic`.
+* **Style** : Norme Betty (Style et Documentation).
+* **Fichier d'en-tête** : `sandpiles.h` (include guarded).
+
+## 📂 Structure du projet
+
+| Fichier | Description |
+| --- | --- |
+| [sandpiles.h](https://www.google.com/search?q=./sandpiles.h) | Contient le prototype de la fonction et les structures nécessaires. |
+| [0-sandpiles.c]() | Cœur de l'algorithme : calcul de la somme et stabilisation de la grille. |
+
+## 🚀 Tâche Principale
+
+| # | Tâche | Fichier | Description |
+| --- | --- | --- | --- |
+| **0** | **Sandpiles sum** | `0-sandpiles.c` | Calcule la somme de deux grilles et stabilise `grid1`. |
+
+## 🕹️ Fonctionnement de l'algorithme
+
+1. Additionner `grid2` à `grid1` (cellule par cellule).
+2. Tant que `grid1` est instable :
+* Afficher la grille actuelle.
+* Identifier toutes les cellules instables ($\ge 4$).
+* Effectuer le "toppling" (effondrement) simultané de ces cellules.
+
+
+
+## 💻 Exemple de compilation et exécution
+
+```bash
+gcc -Wall -Wextra -Werror -pedantic 0-main.c 0-sandpiles.c -o 0-sandpiles
+./0-sandpiles
+
+```
+
+---
+
+## ✍️ Auteur
+
+* **Mathieu** - *Étudiant en programmation (41 ans)* - [GitHub Profile]()
+
 			}
 	}
 }
