@@ -2,42 +2,63 @@
 #include <stdlib.h>
 #include "lists.h"
 
+
 /**
- * is_palindrome - checks if a singly linked list is a palindrome
- * @head: pointer to pointer of head of listint_t list
+ * reverse_list - Invert a linked list in place
+ * @head: First node of the list to reverse
+ * Return: Pointer to the new head of the reversed list
+ */
+listint_t *reverse_list(listint_t *head)
+{
+listint_t *prev = NULL, *next = NULL;
+while (head)
+{
+next = head->next;
+head->next = prev;
+prev = head;
+head = next;
+}
+return (prev);
+}
+
+/**
+ * is_palindrome - check if a singly linked list is a palindrome
+ * @head: pointer to pointer of first node of listint_t list
  * Return: 1 if it is a palindrome, 0 if not
  */
 int is_palindrome(listint_t **head)
-{   
-listint_t *current;
-int *array;
-int i, j;
-int size = 0;
-if (head == NULL || *head == NULL)
+{
+listint_t *slow = *head, *fast = *head;
+listint_t *second_half, *p1, *p2;
+int is_pal = 1;
+if (!head || !*head || !(*head)->next)
 return (1);
-current = *head;
-while (current != NULL)
+
+/* 1. Find the middle */
+while (fast && fast->next)
 {
-size++;
-current = current->next;
+slow = slow->next;
+fast = fast->next->next;
 }
-array = malloc(sizeof(int) * size);
-if (array == NULL)
-return (0);
-current = *head;
-for (i = 0; i < size; i++)
+
+/* 2. Invert the 2nd part */
+second_half = reverse_list(slow);
+
+/* 3. Compare */
+p1 = *head;
+p2 = second_half;
+while (p2)
 {
-array[i] = current->n;
-current = current->next;
-}
-for (i = 0, j = size - 1; i < j; i++, j--)
+if (p1->n != p2->n)
 {
-if (array[i] != array[j])
-{
-free(array);
-return (0);
+is_pal = 0;
+break;
 }
+p1 = p1->next;
+p2 = p2->next;
 }
-free(array);
-return (1);
+
+/* 4. restore the list */
+reverse_list(second_half);
+return (is_pal);
 }
