@@ -8,7 +8,8 @@
  * Return: 1 if it is a palindrome, 0 if not
  */
 int is_palindrome(listint_t **head)
-{    listint_t *current;
+{   
+listint_t *current;
 int *array;
 int i, j;
 int size = 0;
