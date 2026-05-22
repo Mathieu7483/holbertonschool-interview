@@ -21,18 +21,17 @@ if __name__ == "__main__":
         for line in sys.stdin:
             line_count += 1
             parts = line.split()
-            if len(parts) < 9:
-                continue
+            if len(parts) >= 2:
+                try:
+                    status_code = int(parts[-2])
+                    file_size = int(parts[-1])
 
-            try:
-                status_code = int(parts[-2])
-                file_size = int(parts[-1])
-                total_size += file_size
+                    total_size += file_size
 
-                if status_code in status_codes:
-                    status_codes[status_code] += 1
-            except ValueError:
-                continue
+                    if status_code in status_codes:
+                        status_codes[status_code] += 1
+                except (ValueError, IndexError):
+                    continue
 
             if line_count % 10 == 0:
                 print_stats(total_size, status_codes)
