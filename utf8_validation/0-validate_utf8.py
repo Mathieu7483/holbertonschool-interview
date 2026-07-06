@@ -13,9 +13,10 @@ def validUTF8(data):
         bool: True if the data set is a valid UTF-8 encoding, False otherwise.
     """
     num_bytes = 0
-    byte = byte & 0xFF
 
     for byte in data:
+        byte = byte & 0xFF
+
         if num_bytes == 0:
             if (byte >> 5) == 0b110:
                 num_bytes = 1
@@ -23,7 +24,7 @@ def validUTF8(data):
                 num_bytes = 2
             elif (byte >> 3) == 0b11110:
                 num_bytes = 3
-            elif (byte >> 7):
+            elif (byte >> 7) != 0:
                 return False
         else:
             if (byte >> 6) != 0b10:
