@@ -1,6 +1,6 @@
 # Holberton School Interview Preparation
 <p align="center"\>
-<img src="https://github.com/Mathieu7483/Aiko78-Photgraphy/blob/main/img/page%20de%20garde%20interview%20Holberton.png"\>
+<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/palindrome_integer/a-realistic--cinematic-photograph-of-a-developer-s.png"\>
 </p>
 
 
