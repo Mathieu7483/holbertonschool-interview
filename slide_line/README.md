@@ -1,6 +1,6 @@
 # Holberton School Interview Preparation
 <p align="center"\>
-<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/palindrome_integer/a-realistic--cinematic-photograph-of-a-developer-s.png"\>
+<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/slide_line/a-realistic--cinematic-photograph-of-a-systems-pro.png"\>
 </p>
 
 # 2048 — Slide Line
