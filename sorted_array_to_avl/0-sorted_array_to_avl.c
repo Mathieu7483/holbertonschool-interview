@@ -41,7 +41,7 @@ avl_t *sorted_array_to_avl_helper(int *array, int start, int end)
 		return (NULL);
 
 	node->n = array[mid];
-	node->parent = NULL; /* Initialisation explicite */
+	node->parent = NULL;
 	node->left = sorted_array_to_avl_helper(array, start, mid - 1);
 	node->right = sorted_array_to_avl_helper(array, mid + 1, end);
 
