@@ -2,22 +2,22 @@
 
 /**
  * is_empty - checks if a given position in the Menger Sponge is empty
- * row: the row index of the position
- * col: the column index of the position
- * 
+ * @row: the row index of the position
+ * @col: the column index of the position
+ *
  * Return: 1 if the position is empty, 0 otherwise
  */
 
 static int is_empty(int row, int col)
 {
-		while (row > 0 || col > 0)
-		{
-				if (row % 3 == 1 && col % 3 == 1)
-						return (1);
-				row /= 3;
-				col /= 3;
-		}
-		return (0);
+	while (row > 0 || col > 0)
+	{
+		if (row % 3 == 1 && col % 3 == 1)
+			return (1);
+			row /= 3;
+			col /= 3;
+	}
+	return (0);
 }
 
 /*
