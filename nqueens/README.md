@@ -1,6 +1,6 @@
 # Holberton School Interview Preparation
 <p align="center"\>
-<img src=""\>
+<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/nqueens/Nqueens.png"\>
 </p>
 
 ---
