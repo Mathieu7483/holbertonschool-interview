@@ -14,14 +14,14 @@ static int is_empty(int row, int col)
 	{
 		if (row % 3 == 1 && col % 3 == 1)
 			return (1);
-			row /= 3;
-			col /= 3;
+		row /= 3;
+		col /= 3;
 	}
 	return (0);
 }
 
-/*
-* void menger(int level)- draws a Menger Sponge of a given level
+/**
+* menger - draws a Menger Sponge of a given level
 * @level: level of the Menger Sponge to draw
 */
 
