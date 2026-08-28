@@ -80,5 +80,5 @@ gcc -Wall -Wextra -Werror -pedantic 0-main.c 0-heap_sort.c print_array.c -o 0-he
 
 ## Author
 
-* **Mathieu** - [Mathieu7483](https://www.google.com/search?q=https://github.com/Mathieu7483)
+* **Mathieu** - *Étudiant en programmation, spécialisation Machine Learning* - [👤 Mathieu GODALIER](https://github.com/Mathieu7483)
 
