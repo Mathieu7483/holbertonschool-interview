@@ -22,7 +22,7 @@ void print_array(int *array, size_t size)
 /**
 *advanced_binary - function that creates a search for a value in a sorted array
 *@array: is a pointer to the first element of the array to search in
-*@size: is the number of elements in array 
+*@size: is the number of elements in array
 *@value: is the value to search for
 *Return: the index of the value
 */
