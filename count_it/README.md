@@ -1,5 +1,5 @@
 <p align="center"\>
-<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/advanced_binary_search/advanced%20binary%20search.jpg"\>
+<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/count_it/Count%20it.jpg"\>
 </p>
 
 # Reddit API - Count it!
