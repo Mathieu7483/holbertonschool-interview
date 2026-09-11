@@ -74,5 +74,5 @@ Found 5 at index: 3
 
 ## Author
 
-* **Mathieu** - [Mathieu7483](https://www.google.com/search?q=https://github.com/Mathieu7483)
+* **Mathieu** - *Programming student, specialization Machine Learning* - [👤 My Github profile](https://github.com/Mathieu7483)
 
