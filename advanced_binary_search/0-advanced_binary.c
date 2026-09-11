@@ -3,18 +3,17 @@
 /**
  * print_array - Prints an array of integers
  * @array: Pointer to the first element of the array
- * @low: Starting index of the subarray
- * @high: Ending index of the subarray
+ * @size: Size of the array to print
  */
-void print_array(int *array, size_t low, size_t high)
+void print_array(int *array, size_t size)
 {
 	size_t i;
 
 	printf("Searching in array: ");
-	for (i = low; i <= high; i++)
+	for (i = 0; i < size; i++)
 	{
 		printf("%d", array[i]);
-		if (i < high)
+		if (i < size - 1)
 			printf(", ");
 	}
 	printf("\n");
