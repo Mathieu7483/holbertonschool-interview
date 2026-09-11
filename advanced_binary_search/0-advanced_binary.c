@@ -38,7 +38,6 @@ int recursive_advanced_binary(int *array, size_t low, size_t high, int value)
 
 	print_array(array, low, high);
 
-	/* Si le sous-tableau ne contient qu'un seul element */
 	if (low == high)
 	{
 		if (array[low] == value)
