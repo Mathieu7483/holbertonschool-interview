@@ -1,5 +1,5 @@
 <p align="center"\>
-<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/heap_insert/a-dynamic-visualization-of-an-insertion-in-a-max-b.png"\>
+<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/heap_extract/Heap%20extract.jpg"\>
 </p>
 
 # C - Heap Extract
