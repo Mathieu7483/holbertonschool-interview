@@ -38,15 +38,15 @@ int recursive_advanced_binary(int *array, size_t low, size_t high, int value)
 
 	print_array(array, low, high);
 
-	mid = low + (high - low) / 2;
-
-	/* Si on a réduit la recherche à 1 seul élément */
+	/* Si le sous-tableau ne contient qu'un seul element */
 	if (low == high)
 	{
 		if (array[low] == value)
 			return ((int)low);
 		return (-1);
 	}
+
+	mid = low + (high - low) / 2;
 
 	if (array[mid] >= value)
 		return (recursive_advanced_binary(array, low, mid, value));
