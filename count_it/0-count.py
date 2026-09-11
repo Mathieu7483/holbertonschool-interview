@@ -42,7 +42,9 @@ def count_words(subreddit, word_list, instances={}, after="", count=0):
             instances[word] += title_words.count(word)
 
     if after is not None:
-        count_words(subreddit, word_list, instances, after, count + len(children))
+        count_words(
+            subreddit, word_list, instances, after, count + len(children)
+        )
     else:
         sorted_words = sorted(
             instances.items(),
