@@ -120,18 +120,6 @@ Merging...
 
 ```
 
-## 👨‍💻 Author
-
-* **Mathieu** - [GitHub Profile](https://www.google.com/search?q=https://github.com/Mathieu7483)
-
-```
-
----
-
-Souhaitez-vous ajuster certains détails du README, comme ajouter une section relative à d'autres algorithmes de tri ?
-
-```
-
 ## ✍️ Author
 
   * **Mathieu** - *Programming student, specialization Machine Learning* - [👤 My Github profile](https://github.com/Mathieu7483)
