@@ -43,3 +43,10 @@ Rendre les scripts exécutables puis lancer le fichier de test :
 ```bash
 chmod +x 0-island_perimeter.py 0-main.py
 ./0-main.py
+```
+
+---
+
+## ✍️ Auteur
+
+* **Mathieu** - *Holberton School* - [Profil GitHub](https://www.google.com/search?q=https://github.com/Mathieu7483)
