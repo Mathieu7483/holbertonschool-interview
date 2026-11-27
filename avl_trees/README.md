@@ -1,3 +1,8 @@
+# Holberton School Interview Preparation
+<p align="center"\>
+<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/avl_trees/AVL%20trees.jpg"\>
+</p>
+
 # AVL Trees
 
 Projet d'algorithmique et de structures de données en langage C consacré à la vérification et à la manipulation d'arbres binaires de recherche auto-équilibrés de type AVL.
