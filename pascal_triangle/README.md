@@ -1,3 +1,7 @@
+# Holberton School Interview Preparation
+<p align="center"\>
+<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/pascal_triangle/Pascal%20Triangle.jpg"\>
+</p>
 
 # Pascal's Triangle
 
