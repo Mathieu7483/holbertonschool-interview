@@ -93,7 +93,3 @@ Bib Fortuna
 * **Mathieu** ([Mathieu7483](https://www.google.com/search?q=https://github.com/Mathieu7483)) — *Implementation*
 
 ```
-
-Tu n'as plus qu'à coller ce contenu dans un fichier `README.md` placé dans le répertoire `starwars_api/`. N'oublie pas de vérifier la conformité avec `semistandard 0-starwars_characters.js` et les permissions d'exécution (`chmod +x 0-starwars_characters.js`).
-
-```
