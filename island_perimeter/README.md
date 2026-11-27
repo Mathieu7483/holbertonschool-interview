@@ -1,3 +1,8 @@
+# Holberton School Interview Preparation
+<p align="center"\>
+<img src="https://github.com/Mathieu7483/holbertonschool-interview/blob/main/island_perimeter/Island%20perimeter.jpg"\>
+</p>
+
 # Island Perimeter
 
 Projet d'entretien technique (algorithmique / structures de données en Python) consistant à calculer le périmètre d'une île représentée sous forme de grille rectangulaire.
