@@ -6,8 +6,6 @@
 
 # Linked List Palindrome
 
-![Linked List Palindrome](4e75083a.jpeg)
-
 Projet d'algorithmique et de structures de données en langage C visant à déterminer si une liste simplement chaînée forme un palindrome.
 
 ## Contexte et objectif
